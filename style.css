@@ -1,0 +1,18 @@
+.row{
+    margin: 80px
+}
+
+.miestilo {
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.micapa {
+    color: rgb(118, 235, 64);
+}
+
+body {
+    text-align: center;
+    padding-top: 100px;
+}
