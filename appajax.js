@@ -1,10 +1,13 @@
 
 $( document ).ready(function(){ //Esto es obliglaotorio porque sino no va
 
+    $("#plantilla").hide();
     
     $("#miboton").on("click", function() {
 
         var aux = $("#numpersonas").val();
+
+        
 
         $.ajax({
             url: 'https://randomuser.me/api/?results= '+ aux,
@@ -12,21 +15,26 @@ $( document ).ready(function(){ //Esto es obliglaotorio porque sino no va
             success: function(datos) {
                 $("#personas").empty();
                 $.each(datos.results, function(k, v){
-                    $("#personas").append(v.name.first+" -- "+v.name.last);
-                    $("#personas").append(" -- "+v.email);
-                    $("#personas").append(" -- "+v.location.city);
-                    $("#personas").append(" -- "+v.phone);
-                    $("#personas").append('<img class="rounded-circle" src="'+ v.picture.thumbnail +'" alt="">');
-                    $("#personas").append("<br>");
-                });
-               
-                console.log(datos);
+                   
+                    var plantilla = $("#plantilla").clone();
+                    plantilla.find(".col-md-9 > p > b").text(v.name.first +" "+ v.name.last);
+                    plantilla.find(".col-md-3 > img").attr('src', v.picture.large);
+                    plantilla.find(".col-md-9 > p:nth-child(2)").html(v.email +"<br>"+v.phone +"<br>"+ v.location.city);                                        
+                    $("#personas").append(plantilla);
+                    plantilla.show();
+
+                  
+                });               
+                
+                
             }
+
+           
           });
         
         //$("#personas").text("Hola");
        
-
+       
     });
     
 });

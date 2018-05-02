@@ -41,11 +41,30 @@
             <img src="imagen/castillo2.jpg" height="200px">
         </div>
     </div> -->
-    <input type="number" id="numpersonas">
-    <button id="miboton" class="btn btn-success">Cargar personas...</button>
+    <h1>Listado de personas</h1>
+    <p>
+        <input type="number" id="numpersonas">
+        <button id="miboton" class="btn btn-success">Cargar personas...</button>
+    </p>
 
-    <div id="personas">
+    <div id="personas">       
+    </div>
 
+    
+    <div id="plantilla">
+        <div class="row usuario">
+            <div class="col-md-3 text-center">
+                <img src="https://randomuser.me/api/portraits/men/29.jpg">
+            </div>
+            <div class="col-md-9 text-left">
+                <p><b> Julia García </b></p>
+                <p>
+                    juliagarcia@gmail.com <br>
+                    555 254 6898 <br>
+                    Valencia <br>
+                </p>
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
